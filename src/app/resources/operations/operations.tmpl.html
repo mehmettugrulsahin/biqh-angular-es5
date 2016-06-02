@@ -1,0 +1,6 @@
+<div ng-repeat="operation in operationsListCtrl.operations | filter:{resource:operationsListCtrl.getCurrentResourceName()}">
+    <a href="{{operation.url}}" target="_blank">{{operation.name}}</a>
+</div>
+<hr/>
+<ui-view>
+</ui-view>

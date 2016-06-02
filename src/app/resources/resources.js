@@ -1,0 +1,29 @@
+angular.module('resources', [
+    'marketdata.models.resources'
+])
+    .config(function ($stateProvider) {
+        $stateProvider
+            .state('marketdata.resources', {
+                url: '/',
+                views: {
+                    'resources@': {
+                        controller: 'ResourcesListCtrl as resourcesListCtrl',
+                        templateUrl: 'app/resources/resources.tmpl.html'
+                    },
+                    'operations@': {
+                        controller: 'OperationsListCtrl as operationsListCtrl',
+                        templateUrl: 'app/resources/operations/operations.tmpl.html'
+                    }
+                }
+            })
+        ;
+    })
+    .controller('ResourcesListCtrl', function ResourcesListCtrl(ResourcesModel) {
+        var resourcesListCtrl = this;
+
+        ResourcesModel.getResources()
+            .then(function (result) {
+                resourcesListCtrl.resources = result;
+            });
+    })
+;

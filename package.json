@@ -1,9 +1,9 @@
 {
-  "name": "biqh-angular-es5",
+  "name": "marketdata-angular-es5",
   "private": true,
   "version": "0.0.0",
-  "description": "A quickstart project for biqh angular",
-  "repository": "https://github.com/mehmettugrulsahin/biqh-angular-es5",
+  "description": "A starter project for MarketData API with AngularJS",
+  "repository": "https://github.com/mehmettugrulsahin/marketdata-angular-es5",
   "license": "MIT",
   "devDependencies": {
     "bower": "^1.7.7",

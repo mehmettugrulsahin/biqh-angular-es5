@@ -1,11 +1,13 @@
-angular.module('Biqh', [
+angular.module('MarketData', [
     'ngAnimate',
+    'ngMaterial',
     'ui.router',
-    'apis',
+    'resources',
+    'resources.operations'
 ])
     .config(function ($stateProvider, $urlRouterProvider) {
         $stateProvider
-            .state('biqh', {
+            .state('marketdata', {
                 url: '',
                 abstract: true
             })

@@ -1,0 +1,44 @@
+[
+    {
+      "id":0,
+      "resource": "Category",
+      "name": "GetByCode",
+      "url": "https://accapi.biqh.nl/Documentation/MarketData#!/Category/Category_GetByCode"
+    },
+    {
+      "id":1,
+      "resource": "Category",
+      "name": "GetSubCategoryByShareCompanyListingIdAndCategoryCode",
+      "url": "https://accapi.biqh.nl/Documentation/MarketData#!/Category/Category_GetSubCategoryByShareCompanyListingIdAndCategoryCode"
+    },
+    {
+      "id":2,
+      "resource": "DocumentFile",
+      "name": "GetById",
+      "url": "https://accapi.biqh.nl/Documentation/MarketData#!/DocumentFile/DocumentFile_GetById"
+    },
+    {
+      "id":3,
+      "resource": "Listing",
+      "name": "GetAll",
+      "url": "https://accapi.biqh.nl/Documentation/MarketData#!/Listing/Listing_GetAll"
+    },
+    {
+      "id":4,
+      "resource": "Listing",
+      "name": "Get",
+      "url": "https://accapi.biqh.nl/Documentation/MarketData#!/Listing/Listing_Get"
+    },
+    {
+      "id":5,
+      "resource": "Listing",
+      "name": "GetByCategoryId",
+      "url": "https://accapi.biqh.nl/Documentation/MarketData#!/Listing/Listing_GetByCategoryId"
+    },
+    {
+      "id":6,
+      "resource": "MutualFund",
+      "name": "MutualFundGet",
+      "url": "https://accapi.biqh.nl/Documentation/MarketData#!/MutualFund/MutualFund_Get"
+    }
+]

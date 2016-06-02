@@ -1,0 +1,6 @@
+[
+    {"id": 0, "name": "Category"},
+    {"id": 1, "name": "DocumentFile"},
+    {"id": 2, "name": "Listing"},
+    {"id": 3, "name": "MutualFund"}
+]
