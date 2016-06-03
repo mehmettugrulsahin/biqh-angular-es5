@@ -1,6 +1,6 @@
 [
-    {"id": 0, "name": "Category"},
-    {"id": 1, "name": "DocumentFile"},
-    {"id": 2, "name": "Listing"},
-    {"id": 3, "name": "MutualFund"}
+    {"id": 0, "name": "Category", "icon": "/src/assets/svg/category.svg"},
+    {"id": 1, "name": "DocumentFile", "icon": "/src/assets/svg/documentfile.svg"},
+    {"id": 2, "name": "Listing", "icon": "/src/assets/svg/listing.svg"},
+    {"id": 3, "name": "MutualFund", "icon": "/src/assets/svg/mutualfund.svg"}
 ]

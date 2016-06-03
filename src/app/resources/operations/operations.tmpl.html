@@ -1,6 +1,15 @@
-<div ng-repeat="operation in operationsListCtrl.operations | filter:{resource:operationsListCtrl.getCurrentResourceName()}">
-    <a href="{{operation.url}}" target="_blank">{{operation.name}}</a>
-</div>
-<hr/>
+<md-list>
+  <md-list-item ng-repeat="operation in operationsListCtrl.operations | filter:{resource:operationsListCtrl.getCurrentResourceName()}">
+    <md-button href="{{operation.url}}" target="_blank">
+      <md-icon md-svg-src={{operation.icon}}></md-icon>
+      {{operation.name}}
+    </md-button>
+    <!--
+    <md-button class="share" md-no-ink aria-label="Share">
+      <md-icon md-svg-icon="share"></md-icon>
+    </md-button>
+  -->
+  </md-list-item>
+</md-list>
 <ui-view>
 </ui-view>

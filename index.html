@@ -1,0 +1,40 @@
+<!doctype html>
+<html ng-app="MarketData">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>MarketData</title>
+
+        <link rel="stylesheet" href="src/assets/css/marketdata.css">
+
+        <link rel="stylesheet" href="/node_modules/angular-material/angular-material.min.css">
+
+        <script src="/node_modules/angular/angular.min.js"></script>
+        <script src="/node_modules/angular-animate/angular-animate.min.js"></script>
+        <script src="/node_modules/angular-aria/angular-aria.min.js"></script>
+        <script src="/node_modules/angular-material/angular-material.min.js"></script>
+        <script src="/node_modules/angular-ui-router/release/angular-ui-router.min.js"></script>
+        <script src="/node_modules/lodash/lodash.min.js"></script>
+    </head>
+    <body layout="column">
+        <md-toolbar>
+          <h1>A starter project for MarketData API with AngularJS</h1>
+        </md-toolbar>
+
+        <div class="container" layout="row" flex>
+          <md-sidenav md-is-locked-open="true" class="md-whiteframe-4dp">
+            <div ui-view="resources"></div>
+          </md-sidenav>
+
+          <md-content id="content" flex>
+            <div ui-view="operations"></div>
+          </md-content>
+        </div>
+
+        <script src="src/app/marketdata-app.js"></script>
+        <script src="src/app/resources/resources.js"></script>
+        <script src="src/app/resources/operations/operations.js"></script>
+        <script src="src/app/common/models/resources-model.js"></script>
+        <script src="src/app/common/models/operations-model.js"></script>
+    </body>
+</html>

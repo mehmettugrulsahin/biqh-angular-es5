@@ -1,7 +1,7 @@
-<ul class="nav nav-sidebar">
-    <li ng-repeat="resource in resourcesListCtrl.resources" ng-class="{'active':isCurrentResource(resource)}">
-      <a ui-sref="marketdata.resources.operations({resource:resource.name})">
-          {{resource.name}}
-      </a>
-    </li>
-</ul>
+<md-list>
+  <md-list-item ng-repeat="resource in resourcesListCtrl.resources" ng-class="{'active':isCurrentResource(resource)}">
+    <md-button ui-sref="marketdata.resources.operations({resource:resource.name})">
+      <md-icon md-svg-src={{resource.icon}}></md-icon> {{resource.name}}
+    </md-button>
+  </md-list-item>
+</md-list>

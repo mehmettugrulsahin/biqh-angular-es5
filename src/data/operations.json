@@ -3,42 +3,56 @@
       "id":0,
       "resource": "Category",
       "name": "GetByCode",
-      "url": "https://accapi.biqh.nl/Documentation/MarketData#!/Category/Category_GetByCode"
+      "url": "https://accapi.biqh.nl/Documentation/MarketData#!/Category/Category_GetByCode",
+      "icon": "/src/assets/svg/category.svg",
+      "description": "Operation collects categories by code"
     },
     {
       "id":1,
       "resource": "Category",
       "name": "GetSubCategoryByShareCompanyListingIdAndCategoryCode",
-      "url": "https://accapi.biqh.nl/Documentation/MarketData#!/Category/Category_GetSubCategoryByShareCompanyListingIdAndCategoryCode"
+      "url": "https://accapi.biqh.nl/Documentation/MarketData#!/Category/Category_GetSubCategoryByShareCompanyListingIdAndCategoryCode",
+      "icon": "/src/assets/svg/category.svg",
+      "description": "Operation collects categories by listing id and category code"
     },
     {
       "id":2,
       "resource": "DocumentFile",
       "name": "GetById",
-      "url": "https://accapi.biqh.nl/Documentation/MarketData#!/DocumentFile/DocumentFile_GetById"
+      "url": "https://accapi.biqh.nl/Documentation/MarketData#!/DocumentFile/DocumentFile_GetById",
+      "icon": "/src/assets/svg/documentfile.svg",
+      "description": "Operation collects document by id"
     },
     {
       "id":3,
       "resource": "Listing",
       "name": "GetAll",
-      "url": "https://accapi.biqh.nl/Documentation/MarketData#!/Listing/Listing_GetAll"
+      "url": "https://accapi.biqh.nl/Documentation/MarketData#!/Listing/Listing_GetAll",
+      "icon": "/src/assets/svg/listing.svg",
+      "description": "Operation collects all listings"
     },
     {
       "id":4,
       "resource": "Listing",
       "name": "Get",
-      "url": "https://accapi.biqh.nl/Documentation/MarketData#!/Listing/Listing_Get"
+      "url": "https://accapi.biqh.nl/Documentation/MarketData#!/Listing/Listing_Get",
+      "icon": "/src/assets/svg/listing.svg",
+      "description": "Operation collects listing by listing id"
     },
     {
       "id":5,
       "resource": "Listing",
       "name": "GetByCategoryId",
-      "url": "https://accapi.biqh.nl/Documentation/MarketData#!/Listing/Listing_GetByCategoryId"
+      "url": "https://accapi.biqh.nl/Documentation/MarketData#!/Listing/Listing_GetByCategoryId",
+      "icon": "/src/assets/svg/listing.svg",
+      "description": "Operation collects listing by category id"
     },
     {
       "id":6,
       "resource": "MutualFund",
       "name": "MutualFundGet",
-      "url": "https://accapi.biqh.nl/Documentation/MarketData#!/MutualFund/MutualFund_Get"
+      "url": "https://accapi.biqh.nl/Documentation/MarketData#!/MutualFund/MutualFund_Get",
+      "icon": "/src/assets/svg/mutualfund.svg",
+      "description": "Operation collects mutual fund by listing id"
     }
 ]

@@ -2,7 +2,7 @@ angular.module('marketdata.models.operations', [])
     .service('OperationsModel', function ($http, $q) {
         var model = this,
             URLS = {
-                FETCH: 'data/operations.json'
+                FETCH: 'src/data/operations.json'
             },
             operations;
 

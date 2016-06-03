@@ -2,7 +2,7 @@ angular.module('marketdata.models.resources', [])
     .service('ResourcesModel', function ($http, $q) {
         var model = this,
             URLS = {
-                FETCH: 'data/resources.json'
+                FETCH: 'src/data/resources.json'
             },
             resources,
             currentResource;

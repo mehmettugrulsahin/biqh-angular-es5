@@ -8,11 +8,11 @@ angular.module('resources', [
                 views: {
                     'resources@': {
                         controller: 'ResourcesListCtrl as resourcesListCtrl',
-                        templateUrl: 'app/resources/resources.tmpl.html'
+                        templateUrl: 'src/app/resources/resources.tmpl.html'
                     },
                     'operations@': {
                         controller: 'OperationsListCtrl as operationsListCtrl',
-                        templateUrl: 'app/resources/operations/operations.tmpl.html'
+                        templateUrl: 'src/app/resources/operations/operations.tmpl.html'
                     }
                 }
             })
