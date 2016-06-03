@@ -6,7 +6,6 @@
         <title>MarketData</title>
 
         <link rel="stylesheet" href="src/assets/css/marketdata.css">
-
         <link rel="stylesheet" href="/node_modules/angular-material/angular-material.min.css">
 
         <script src="/node_modules/angular/angular.min.js"></script>
@@ -15,6 +14,13 @@
         <script src="/node_modules/angular-material/angular-material.min.js"></script>
         <script src="/node_modules/angular-ui-router/release/angular-ui-router.min.js"></script>
         <script src="/node_modules/lodash/lodash.min.js"></script>
+
+        <script src="src/app/marketdata-app.js"></script>
+        <script src="src/app/resources/resources.js"></script>
+        <script src="src/app/resources/operations/operations.js"></script>
+        <script src="src/app/resources/operations/call/operation-call.js"></script>
+        <script src="src/app/common/models/resources-model.js"></script>
+        <script src="src/app/common/models/operations-model.js"></script>
     </head>
     <body layout="column">
         <md-toolbar>
@@ -30,11 +36,5 @@
             <div ui-view="operations"></div>
           </md-content>
         </div>
-
-        <script src="src/app/marketdata-app.js"></script>
-        <script src="src/app/resources/resources.js"></script>
-        <script src="src/app/resources/operations/operations.js"></script>
-        <script src="src/app/common/models/resources-model.js"></script>
-        <script src="src/app/common/models/operations-model.js"></script>
     </body>
 </html>

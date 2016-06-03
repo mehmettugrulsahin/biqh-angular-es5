@@ -1,15 +1,26 @@
-<md-list>
-  <md-list-item ng-repeat="operation in operationsListCtrl.operations | filter:{resource:operationsListCtrl.getCurrentResourceName()}">
-    <md-button href="{{operation.url}}" target="_blank">
-      <md-icon md-svg-src={{operation.icon}}></md-icon>
-      {{operation.name}}
-    </md-button>
-    <!--
-    <md-button class="share" md-no-ink aria-label="Share">
-      <md-icon md-svg-icon="share"></md-icon>
-    </md-button>
-  -->
-  </md-list-item>
-</md-list>
+<md-card>
+  <md-card-title>
+    <md-card-title-text>
+      <span class="md-headline">{{operationsListCtrl.getCurrentResourceName()}} Resource Operations</span>
+    </md-card-title-text>
+  </md-card-title>
+
+  <md-list>
+    <md-list-item ng-repeat="operation in operationsListCtrl.operations | filter:{resource:operationsListCtrl.getCurrentResourceName()}">
+
+      <md-button href="{{operation.url}}" target="_blank">
+        <md-icon md-svg-src={{operation.icon}}></md-icon>
+        {{operation.name}}
+
+      </md-button>
+      <md-button class="share" md-no-ink aria-label="Share" ui-sref="marketdata.resources.operations.call({ operationId:operation.id})">
+        <md-icon md-svg-icon="share"></md-icon>
+      </md-button>
+
+    </md-list-item>
+  </md-list>
+  <hr/>
+</md-card>
+
 <ui-view>
 </ui-view>

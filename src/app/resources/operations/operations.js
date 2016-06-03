@@ -1,4 +1,5 @@
 angular.module('resources.operations', [
+    'resources.operations.call',
     'marketdata.models.resources',
     'marketdata.models.operations'
 ])
@@ -27,6 +28,4 @@ angular.module('resources.operations', [
 
         operationsListCtrl.getCurrentResource = ResourcesModel.getCurrentResource;
         operationsListCtrl.getCurrentResourceName = ResourcesModel.getCurrentResourceName;
-    })
-
-;
+    });
