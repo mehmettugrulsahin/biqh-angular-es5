@@ -1,3 +1,3 @@
-angular.module('resources.operations.mutualfunds.get', [
+angular.module('resources.operations.mutualfundsget', [
 
 ]);

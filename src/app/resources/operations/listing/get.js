@@ -1,3 +1,3 @@
-angular.module('resources.operations.listing.get', [
+angular.module('resources.operations.listingget', [
 
 ]);

@@ -1,3 +1,3 @@
-angular.module('resources.operations.listing.getbycategoryid', [
+angular.module('resources.operations.listinggetbycategoryid', [
 
 ]);

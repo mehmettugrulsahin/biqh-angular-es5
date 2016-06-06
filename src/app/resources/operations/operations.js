@@ -1,12 +1,13 @@
 angular.module('resources.operations', [
     'resources.operations.categorygetbycode',
     'resources.operations.categorygetbyidandcode',
+    'resources.operations.documentfilegetbyid',
+    'resources.operations.listinggetall',
     /*
-    'resources.operations.documentfile.getbyid',
-    'resources.operations.listing.getall',
-    'resources.operations.listing.get',
-    'resources.operations.listing.getbycategoryid',
-    'resources.operations.mutualfund.get',
+
+    'resources.operations.listingget',
+    'resources.operations.listinggetbycategoryid',
+    'resources.operations.mutualfundget',
     */
     'marketdata.models.resources',
     'marketdata.models.operations'
@@ -46,27 +47,32 @@ angular.module('resources.operations', [
                 operationId: operation.id
               })
               break;
-            /*
             case 'DocumentFile_GetById':
-              $state.go('marketdata.resources.operations.documentfile.getbyid', {
+              $state.go('marketdata.resources.operations.documentfilegetbyid', {
                 operationId: operation.id
             })
+            break;
             case 'Listing_GetAll':
-              $state.go('marketdata.resources.operations.listing.getall', {
+              $state.go('marketdata.resources.operations.listinggetall', {
                 operationId: operation.id
             })
+            break;
+            /*
             case 'Listing_Get':
-              $state.go('marketdata.resources.operations.listing.get', {
+              $state.go('marketdata.resources.operations.listingget', {
                 operationId: operation.id
             })
+            break;
             case 'Listing_GetByCategoryId':
-              $state.go('marketdata.resources.operations.listing.getbycategoryid', {
+              $state.go('marketdata.resources.operations.listinggetbycategoryid', {
                 operationId: operation.id
             })
+            break;
             case 'MutualFund_Get':
-              $state.go('marketdata.resources.operations.mutualfund.get', {
+              $state.go('marketdata.resources.operations.mutualfundget', {
                 operationId: operation.id
             })
+            break;
             */
           }
         }
