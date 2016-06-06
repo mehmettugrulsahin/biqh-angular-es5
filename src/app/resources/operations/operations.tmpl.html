@@ -8,12 +8,12 @@
   <md-list>
     <md-list-item ng-repeat="operation in operationsListCtrl.operations | filter:{resource:operationsListCtrl.getCurrentResourceName()}">
 
-      <md-button href="{{operation.url}}" target="_blank">
+      <md-button ng-click="operationsListCtrl.callOperation(operation)">
         <md-icon md-svg-src={{operation.icon}}></md-icon>
         {{operation.name}}
-
       </md-button>
-      <md-button class="share" md-no-ink aria-label="Share" ui-sref="marketdata.resources.operations.call({ operationId:operation.id})">
+
+      <md-button class="share" md-no-ink aria-label="Share" href="{{operation.url}}" target="_blank" flex>
         <md-icon md-svg-icon="share"></md-icon>
       </md-button>
 

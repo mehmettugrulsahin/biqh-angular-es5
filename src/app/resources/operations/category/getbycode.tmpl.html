@@ -1,22 +1,22 @@
 <md-card>
   <md-card-title>
     <md-card-title-text>
-      <span class="md-headline">{{callOperationCtrl.operation.name}}</span>
-      <span class="md-subhead">{{callOperationCtrl.operation.description}}</span>
+      <span class="md-headline">{{categoryGetByCodeCtrl.operation.name}}</span>
+      <span class="md-subhead">{{categoryGetByCodeCtrl.operation.description}}</span>
     </md-card-title-text>
   </md-card-title>
   <md-card-content>
-    <md-content md-theme="docs-dark" layout-gt-sm="row" layout-padding>
+    <md-content layout-gt-sm="row" layout-padding>
       <div>
         <md-input-container>
-          <label>Parameter</label>
+          <label>Category Code</label>
           <input>
         </md-input-container>
       </div>
     </md-content>
     <md-card-actions layout="row" layout-align="end center">
       <md-button md-raised-button type="submit" class="md-raised md-raised-button">Call</md-button>
-      <md-button md-raised-button class="md-raised md-raised-button" ng-click="callOperationCtrl.cancelCalling()">Cancel</md-button>
+      <md-button md-raised-button class="md-raised md-raised-button" ng-click="categoryGetByCodeCtrl.cancelCalling()">Cancel</md-button>
     </md-card-actions>
   </md-card-content>
 </md-card>
