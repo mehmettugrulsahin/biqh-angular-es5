@@ -3,14 +3,12 @@ angular.module('resources.operations', [
     'resources.operations.categorygetbyidandcode',
     'resources.operations.documentfilegetbyid',
     'resources.operations.listinggetall',
-    /*
-
     'resources.operations.listingget',
     'resources.operations.listinggetbycategoryid',
     'resources.operations.mutualfundget',
-    */
     'marketdata.models.resources',
-    'marketdata.models.operations'
+    'marketdata.models.operations',
+    'marketdata.models.categories'
 ])
     .config(function ($stateProvider, $mdIconProvider) {
         $stateProvider
@@ -50,30 +48,28 @@ angular.module('resources.operations', [
             case 'DocumentFile_GetById':
               $state.go('marketdata.resources.operations.documentfilegetbyid', {
                 operationId: operation.id
-            })
-            break;
+              })
+              break;
             case 'Listing_GetAll':
               $state.go('marketdata.resources.operations.listinggetall', {
                 operationId: operation.id
-            })
-            break;
-            /*
+              })
+              break;
             case 'Listing_Get':
               $state.go('marketdata.resources.operations.listingget', {
                 operationId: operation.id
-            })
-            break;
+              })
+              break;
             case 'Listing_GetByCategoryId':
               $state.go('marketdata.resources.operations.listinggetbycategoryid', {
                 operationId: operation.id
-            })
-            break;
+              })
+              break;
             case 'MutualFund_Get':
               $state.go('marketdata.resources.operations.mutualfundget', {
                 operationId: operation.id
-            })
-            break;
-            */
+              })
+              break;
           }
         }
 

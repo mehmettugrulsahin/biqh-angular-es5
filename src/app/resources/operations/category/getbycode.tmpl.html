@@ -7,15 +7,57 @@
   </md-card-title>
   <md-card-content>
     <md-content layout-gt-sm="row" layout-padding>
-      <div>
         <md-input-container>
           <label>Category Code</label>
-          <input>
+          <input
+            ng-model="categoryCode" ng-required="true"
+            ng-minlength="1" ng-maxlength="10" ng-trim="false">
+          {{categoryGetByCodeCtrl.categoryCode}}
+          </input>
         </md-input-container>
-      </div>
     </md-content>
+
+
+    <md-content ng-if="categoryGetByCodeCtrl.category" layout-gt-sm="row">
+      Category {{categoryGetByCodeCtrl.category.Name}}
+    </md-content>
+    <md-content ng-if="categoryGetByCodeCtrl.category" layout-gt-sm="row" layout-padding>
+      <table>
+      <tr>
+        <th>Id</th>
+        <th>Code</th>
+        <th>Name</th>
+      </tr>
+      <tr>
+        <td>{{ categoryGetByCodeCtrl.category.Id }}</td>
+        <td>{{ categoryGetByCodeCtrl.category.Code }}</td>
+        <td>{{ categoryGetByCodeCtrl.category.Name }}</td>
+      </tr>
+    </table>
+    </md-content>
+
+    <md-content ng-if="categoryGetByCodeCtrl.category" layout-gt-sm="row">
+      {{categoryGetByCodeCtrl.category.Name}} sub categories
+    </md-content>
+    <md-content ng-if="categoryGetByCodeCtrl.category" layout-gt-sm="row" layout-padding>
+      <table>
+        <tr>
+          <th>Id</th>
+          <th>Code</th>
+          <th>Name</th>
+          <th>Sort Order</th>
+        </tr>
+        <tr ng-repeat="category in categoryGetByCodeCtrl.category.Categories">
+          <td>{{ category.Id }}</td>
+          <td>{{ category.Code }}</td>
+          <td>{{ category.Name }}</td>
+          <td>{{ category.SortOrder }}</td>
+        </tr>
+      </table>
+    </md-content>
+
     <md-card-actions layout="row" layout-align="end center">
-      <md-button md-no-ink md-raised-button type="submit" class="md-raised md-raised-button md-primary">Get Market Data</md-button>
+      <md-button md-no-ink md-raised-button ng-click="categoryGetByCodeCtrl.callCategoryGetByCode()" class="md-raised md-raised-button md-primary">Get Market Data</md-button>
       <md-button md-no-ink md-raised-button class="md-raised md-raised-button" ng-click="categoryGetByCodeCtrl.cancelCalling()">Cancel</md-button>
     </md-card-actions>
   </md-card-content>

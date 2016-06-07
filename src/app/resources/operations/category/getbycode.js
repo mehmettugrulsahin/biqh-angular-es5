@@ -10,8 +10,9 @@ angular.module('resources.operations.categorygetbycode', [
             })
         ;
     })
-    .controller('CategoryGetByCodeCtrl', function CategoryGetByCodeCtrl($state, $stateParams, OperationsModel) {
+    .controller('CategoryGetByCodeCtrl', function CategoryGetByCodeCtrl($scope, $state, $stateParams, OperationsModel, CategoriesModel) {
         var categoryGetByCodeCtrl = this;
+        $scope.categoryCode = '';
 
         function returnToOperations() {
             $state.go('marketdata.resources.operations', {
@@ -20,7 +21,14 @@ angular.module('resources.operations.categorygetbycode', [
         }
 
         function callCategoryGetByCode() {
-
+          CategoriesModel.getCategories($scope.categoryCode)
+              .success(function (category) {
+                  if (category) {
+                      categoryGetByCodeCtrl.category = category;
+                  } else {
+                      returnToOperations();
+                  }
+              });
         }
 
         function cancelCalling() {

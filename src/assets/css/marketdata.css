@@ -128,3 +128,28 @@ span.name {
   font-size:1.1em;
   padding-left:5px;
 }
+
+table{
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  overflow: hidden;
+}
+
+ td, th{
+    border-top: 1px solid #BBDEFB;
+    padding: 10px;
+  }
+
+  td{
+    border-left: 1px solid #BBDEFB;
+    border-right: 1px solid #BBDEFB;
+  }
+
+  th{
+    background-color: #2196F3;
+  }
+
+  tr:nth-of-type(even) td{
+    background-color: lighten(#2196F3, 35%);
+  }
