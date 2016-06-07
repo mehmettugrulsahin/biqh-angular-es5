@@ -10,9 +10,11 @@ angular.module('resources.operations.categorygetbycode', [
             })
         ;
     })
-    .controller('CategoryGetByCodeCtrl', function CategoryGetByCodeCtrl($scope, $state, $stateParams, OperationsModel, CategoriesModel) {
+    .controller('CategoryGetByCodeCtrl', function CategoryGetByCodeCtrl(
+      $scope, $state, $stateParams, OperationsModel, CategoriesModel) {
         var categoryGetByCodeCtrl = this;
         $scope.categoryCode = '';
+        $scope.apiKey = '';
 
         function returnToOperations() {
             $state.go('marketdata.resources.operations', {
@@ -21,7 +23,7 @@ angular.module('resources.operations.categorygetbycode', [
         }
 
         function callCategoryGetByCode() {
-          CategoriesModel.getCategories($scope.categoryCode)
+          CategoriesModel.getCategories($scope.categoryCode, $scope.apiKey)
               .success(function (category) {
                   if (category) {
                       categoryGetByCodeCtrl.category = category;

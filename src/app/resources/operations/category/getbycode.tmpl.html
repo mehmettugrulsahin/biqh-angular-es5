@@ -15,6 +15,14 @@
           {{categoryGetByCodeCtrl.categoryCode}}
           </input>
         </md-input-container>
+        <md-input-container>
+          <label>API Key</label>
+          <input
+            ng-model="apiKey" ng-required="true"
+            ng-minlength="1" ng-maxlength="40" ng-trim="false">
+          {{categoryGetByCodeCtrl.apiKey}}
+          </input>
+        </md-input-container>
     </md-content>
 
 

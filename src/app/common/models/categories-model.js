@@ -2,8 +2,7 @@ angular.module('marketdata.models.categories', [])
     .service('CategoriesModel', function ($http, $q) {
         var model = this,
             URLS = {
-                FETCH: 'https://accapi.biqh.nl:443/marketdata/v1/Category/GetByCode?code=',
-                APIKEY: '&api_key='
+                FETCH: 'https://accapi.biqh.nl:443/marketdata/v1/Category/GetByCode?code='
             },
             categories;
 
@@ -22,10 +21,10 @@ angular.module('marketdata.models.categories', [])
             })
         }
 
-        model.getCategories = function (categoryCode) {
+        model.getCategories = function (categoryCode, apiKey) {
             return (categories)
               ? $q.when(categories)
-              : $http.get(URLS.FETCH + categoryCode + URLS.APIKEY)
+              : $http.get(URLS.FETCH + categoryCode + '&api_key=' + apiKey)
                 .success(function (result) {
                   cacheCategories = result;
                 });
