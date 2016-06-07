@@ -7,21 +7,52 @@
   </md-card-title>
   <md-card-content>
     <md-content layout-gt-sm="row" layout-padding>
-      <div>
+      <md-content layout-gt-sm="row" layout-padding>
         <md-input-container>
-          <label>Listing Id</label>
-          <input>
+          <label>Listing ID</label>
+          <input ng-model="listingId" ng-required="true" ng-minlength="1" ng-maxlength="10">
+            {{categoryGetByIdAndCodeCtrl.listingId}}
+          </input>
         </md-input-container>
-
-        <md-input-container>
-          <label>Category Code</label>
-          <input>
-        </md-input-container>
-      </div>
+          <md-input-container>
+            <label>Category Code</label>
+            <input ng-model="categoryCode" ng-required="true" ng-minlength="1" ng-maxlength="10">
+              {{categoryGetByIdAndCodeCtrl.categoryCode}}
+            </input>
+          </md-input-container>
+          <md-input-container>
+            <label>API Key</label>
+            <input ng-model="apiKey" ng-required="true" ng-minlength="1" ng-maxlength="40">
+              {{categoryGetByIdAndCodeCtrl.apiKey}}
+            </input>
+          </md-input-container>
+      </md-content>
     </md-content>
     <md-card-actions layout="row" layout-align="end center">
-      <md-button md-no-ink md-raised-button type="submit" class="md-raised md-raised-button md-primary">Get Market Data</md-button>
+      <md-button md-no-ink md-raised-button ng-click="categoryGetByIdAndCodeCtrl.callGetSubCategory()" class="md-raised md-raised-button md-primary">Get Market Data</md-button>
       <md-button md-no-ink md-raised-button class="md-raised md-raised-button" ng-click="categoryGetByIdAndCodeCtrl.cancelCalling()">Cancel</md-button>
     </md-card-actions>
+  </md-card-content>
+</md-card>
+
+<md-card ng-if="categoryGetByIdAndCodeCtrl.subCategories">
+  <md-card-content>
+    <md-content layout-gt-sm="row">
+      SubCategories
+    </md-content>
+    <md-content layout-gt-sm="row" layout-padding>
+      <table>
+        <tr>
+          <th>Id</th>
+          <th>Code</th>
+          <th>Name</th>
+        </tr>
+        <tr ng-repeat="subCategory in categoryGetByIdAndCodeCtrl.subCategories">
+          <td>{{ subCategory.Id }}</td>
+          <td>{{ subCategory.Code }}</td>
+          <td>{{ subCategory.Name }}</td>
+        </tr>
+      </table>
+    </md-content>
   </md-card-content>
 </md-card>

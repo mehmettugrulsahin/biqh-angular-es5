@@ -40,7 +40,7 @@ angular.module('resources.operations', [
                 operationId: operation.id
               })
               break;
-            case 'Category_GetSubCategoryByShareCompanyListingIdAndCategoryCode':
+            case 'Category_GetSubCategory':
               $state.go('marketdata.resources.operations.categorygetbyidandcode', {
                 operationId: operation.id
               })

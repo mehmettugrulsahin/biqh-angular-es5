@@ -31,17 +31,17 @@
     </head>
     <body layout="column">
         <md-toolbar>
-          <h1>A starter project for MarketData API with AngularJS</h1>
+          <h1>AngularJS quickstart project for MarketData API</h1>
         </md-toolbar>
 
-        <div class="container" layout="row" flex>
+        <div class="container" layout="row">
           <md-sidenav md-is-locked-open="true" class="md-whiteframe-4dp">
             <div ui-view="resources"></div>
           </md-sidenav>
 
-          <md-content id="content" flex>
-            <div ui-view="operations"></div>
-          </md-content>
+          <div id="content">
+            <div ui-view="operations"></md-content>
+          </div>
         </div>
     </body>
 </html>

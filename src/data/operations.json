@@ -11,11 +11,11 @@
     {
       "id":1,
       "resource": "Category",
-      "name": "GetSubCategoryByShareCompanyListingIdAndCategoryCode",
+      "name": "GetSubCategory",
       "url": "https://accapi.biqh.nl/Documentation/MarketData#!/Category/Category_GetSubCategoryByShareCompanyListingIdAndCategoryCode",
       "icon": "/src/assets/svg/category.svg",
       "description": "Operation collects categories by listing id and category code.",
-      "absolutename": "Category_GetSubCategoryByShareCompanyListingIdAndCategoryCode"
+      "absolutename": "Category_GetSubCategory"
     },
     {
       "id":2,

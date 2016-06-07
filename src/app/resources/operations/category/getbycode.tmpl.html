@@ -9,27 +9,31 @@
     <md-content layout-gt-sm="row" layout-padding>
         <md-input-container>
           <label>Category Code</label>
-          <input
-            ng-model="categoryCode" ng-required="true"
-            ng-minlength="1" ng-maxlength="10" ng-trim="false">
-          {{categoryGetByCodeCtrl.categoryCode}}
+          <input ng-model="categoryCode" ng-required="true" ng-minlength="1" ng-maxlength="10">
+            {{categoryGetByCodeCtrl.categoryCode}}
           </input>
         </md-input-container>
         <md-input-container>
           <label>API Key</label>
-          <input
-            ng-model="apiKey" ng-required="true"
-            ng-minlength="1" ng-maxlength="40" ng-trim="false">
-          {{categoryGetByCodeCtrl.apiKey}}
+          <input ng-model="apiKey" ng-required="true" ng-minlength="1" ng-maxlength="40">
+            {{categoryGetByCodeCtrl.apiKey}}
           </input>
         </md-input-container>
     </md-content>
 
+    <md-card-actions layout="row" layout-align="end center">
+      <md-button md-no-ink md-raised-button ng-click="categoryGetByCodeCtrl.callCategoryGetByCode()" class="md-raised md-raised-button md-primary">Get Market Data</md-button>
+      <md-button md-no-ink md-raised-button class="md-raised md-raised-button" ng-click="categoryGetByCodeCtrl.cancelCalling()">Cancel</md-button>
+    </md-card-actions>
+  </md-card-content>
+</md-card>
 
-    <md-content ng-if="categoryGetByCodeCtrl.category" layout-gt-sm="row">
+<md-card ng-if="categoryGetByCodeCtrl.category">
+  <md-card-content>
+    <md-content layout-gt-sm="row">
       Category {{categoryGetByCodeCtrl.category.Name}}
     </md-content>
-    <md-content ng-if="categoryGetByCodeCtrl.category" layout-gt-sm="row" layout-padding>
+    <md-content layout-gt-sm="row" layout-padding>
       <table>
       <tr>
         <th>Id</th>
@@ -44,10 +48,10 @@
     </table>
     </md-content>
 
-    <md-content ng-if="categoryGetByCodeCtrl.category" layout-gt-sm="row">
+    <md-content layout-gt-sm="row">
       {{categoryGetByCodeCtrl.category.Name}} sub categories
     </md-content>
-    <md-content ng-if="categoryGetByCodeCtrl.category" layout-gt-sm="row" layout-padding>
+    <md-content layout-gt-sm="row" layout-padding>
       <table>
         <tr>
           <th>Id</th>
@@ -63,10 +67,5 @@
         </tr>
       </table>
     </md-content>
-
-    <md-card-actions layout="row" layout-align="end center">
-      <md-button md-no-ink md-raised-button ng-click="categoryGetByCodeCtrl.callCategoryGetByCode()" class="md-raised md-raised-button md-primary">Get Market Data</md-button>
-      <md-button md-no-ink md-raised-button class="md-raised md-raised-button" ng-click="categoryGetByCodeCtrl.cancelCalling()">Cancel</md-button>
-    </md-card-actions>
   </md-card-content>
 </md-card>

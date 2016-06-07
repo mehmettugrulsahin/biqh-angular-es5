@@ -10,7 +10,8 @@ angular.module('resources.operations.categorygetbyidandcode', [
             })
         ;
     })
-    .controller('CategoryGetByIdAndCodeCtrl', function CategoryGetByIdAndCodeCtrl($state, $stateParams, OperationsModel) {
+    .controller('CategoryGetByIdAndCodeCtrl', function CategoryGetByIdAndCodeCtrl(
+      $scope, $state, $stateParams, OperationsModel, CategoriesModel) {
         var categoryGetByIdAndCodeCtrl = this;
 
         function returnToOperations() {
@@ -19,8 +20,15 @@ angular.module('resources.operations.categorygetbyidandcode', [
             })
         }
 
-        function callGetSubCategoryByShareCompanyListingIdAndCategoryCode() {
-
+        function callGetSubCategory() {
+          CategoriesModel.callGetSubCategory($scope.listingId, $scope.categoryCode, $scope.apiKey)
+              .success(function (subCategories) {
+                  if (subCategories) {
+                      categoryGetByIdAndCodeCtrl.subCategories = subCategories;
+                  } else {
+                      returnToOperations();
+                  }
+              });
         }
 
         function cancelCalling() {
@@ -37,6 +45,6 @@ angular.module('resources.operations.categorygetbyidandcode', [
             });
 
         categoryGetByIdAndCodeCtrl.cancelCalling = cancelCalling;
-        categoryGetByIdAndCodeCtrl.callGetSubCategoryByShareCompanyListingIdAndCategoryCode = callGetSubCategoryByShareCompanyListingIdAndCategoryCode;
+        categoryGetByIdAndCodeCtrl.callGetSubCategory = callGetSubCategory;
     })
 ;

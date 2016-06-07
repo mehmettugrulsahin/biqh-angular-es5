@@ -23,7 +23,7 @@ angular.module('resources.operations.categorygetbycode', [
         }
 
         function callCategoryGetByCode() {
-          CategoriesModel.getCategories($scope.categoryCode, $scope.apiKey)
+          CategoriesModel.getCategoryBycode($scope.categoryCode, $scope.apiKey)
               .success(function (category) {
                   if (category) {
                       categoryGetByCodeCtrl.category = category;

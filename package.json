@@ -2,7 +2,7 @@
   "name": "marketdata-angular-es5",
   "private": true,
   "version": "0.0.0",
-  "description": "A starter project for MarketData API with AngularJS",
+  "description": "AngularJS quickstart project for MarketData API",
   "repository": "https://github.com/mehmettugrulsahin/marketdata-angular-es5",
   "license": "MIT",
   "scripts": {
