@@ -3,7 +3,7 @@ angular.module('marketdata.models.categories', [])
         var model = this,
             URLS = {
                 FETCH: 'https://accapi.biqh.nl:443/marketdata/v1/Category/GetByCode?code=',
-                APIKEY: '&api_key=c400888c-58a0-4375-9a0c-9a06da6969a4'
+                APIKEY: '&api_key='
             },
             categories;
 
