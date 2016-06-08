@@ -17,5 +17,9 @@
     "angular-ui-router": "^0.3.0",
     "http-server": "^0.9.0",
     "lodash": "^4.13.1"
+  },
+  "dependencies": {
+    "ng-redux": "^3.3.4-beta.0",
+    "redux": "^3.5.2"
   }
 }

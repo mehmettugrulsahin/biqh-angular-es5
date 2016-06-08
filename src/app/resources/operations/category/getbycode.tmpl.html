@@ -9,14 +9,12 @@
     <md-content layout-gt-sm="row" layout-padding>
         <md-input-container>
           <label>Category Code</label>
-          <input ng-model="categoryCode" ng-required="true" ng-minlength="1" ng-maxlength="10">
-            {{categoryGetByCodeCtrl.categoryCode}}
+          <input ng-model="searchCategoryCode" ng-required="true" ng-minlength="1" ng-maxlength="10">
           </input>
         </md-input-container>
         <md-input-container>
           <label>API Key</label>
-          <input ng-model="apiKey" ng-required="true" ng-minlength="1" ng-maxlength="40">
-            {{categoryGetByCodeCtrl.apiKey}}
+          <input ng-model="searchApiKey" ng-required="true" ng-minlength="1" ng-maxlength="40">
           </input>
         </md-input-container>
     </md-content>
