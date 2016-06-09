@@ -26,7 +26,7 @@
     </md-card-actions>
   </md-card-content>
 </md-card>
-<md-card ng-if="mutualFundGetCtrl.listing">
+<md-card ng-if="mutualFundGetCtrl.mutualfund">
   <md-card-content>
     <md-content layout-gt-sm="row">
       Mutual Fund
@@ -40,10 +40,10 @@
           <th>NetAssetValue</th>
         </tr>
         <tr>
-          <td>{{ listingGetCtrl.listing.Id }}</td>
-          <td>{{ listingGetCtrl.listing.Name }}</td>
-          <td>{{ listingGetCtrl.listing.ISIN }}</td>
-          <td>{{ listingGetCtrl.listing.NetAssetValue }}</td>
+          <td>{{ mutualFundGetCtrl.mutualfund.Id }}</td>
+          <td>{{ mutualFundGetCtrl.mutualfund.Name }}</td>
+          <td>{{ mutualFundGetCtrl.mutualfund.ISIN }}</td>
+          <td>{{ mutualFundGetCtrl.mutualfund.NetAssetValue }}</td>
         </tr>
       </table>
     </md-content>

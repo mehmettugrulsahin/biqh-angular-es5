@@ -25,7 +25,9 @@ angular.module('resources.operations', [
             });
         $mdIconProvider.icon('share', './src/assets/svg/share.svg', 24);
     })
-    .controller('OperationsListCtrl', function OperationsListCtrl($state, $stateParams, ResourcesModel, OperationsModel) {
+    .controller('OperationsListCtrl', ['$state', '$stateParams', 'ResourcesModel', 'OperationsModel', 
+      function($state, $stateParams, ResourcesModel, OperationsModel) {
+        
         var operationsListCtrl = this;
 
         ResourcesModel.setCurrentResource($stateParams.resource);
@@ -78,4 +80,5 @@ angular.module('resources.operations', [
         operationsListCtrl.getCurrentResource = ResourcesModel.getCurrentResource;
         operationsListCtrl.getCurrentResourceName = ResourcesModel.getCurrentResourceName;
         operationsListCtrl.callOperation = callOperation;
-    });
+    }])
+;

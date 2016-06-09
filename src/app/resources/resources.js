@@ -18,12 +18,12 @@ angular.module('resources', [
             })
         ;
     })
-    .controller('ResourcesListCtrl', function ResourcesListCtrl(ResourcesModel) {
+    .controller('ResourcesListCtrl', ['ResourcesModel', function(ResourcesModel) {
         var resourcesListCtrl = this;
 
         ResourcesModel.getResources()
             .then(function (result) {
                 resourcesListCtrl.resources = result;
             });
-    })
+    }])
 ;

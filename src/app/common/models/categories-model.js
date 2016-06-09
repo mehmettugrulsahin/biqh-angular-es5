@@ -1,5 +1,5 @@
 angular.module('marketdata.models.categories', [])
-    .service('CategoriesModel', function ($http, $q) {
+    .service('CategoriesModel', ['$http', '$q', function($http, $q) {
         var model = this,
             URLS = {
                 GetByCode: 'https://accapi.biqh.nl:443/marketdata/v1/Category/GetByCode?',
@@ -39,5 +39,5 @@ angular.module('marketdata.models.categories', [])
                 cacheSubCategories = result;
               });
         };
-    })
+    }])
 ;

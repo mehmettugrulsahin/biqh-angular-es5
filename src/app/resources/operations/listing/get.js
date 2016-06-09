@@ -8,8 +8,8 @@ angular.module('resources.operations.listingget', [])
             })
         ;
     })
-    .controller('ListingGetCtrl', ['$scope', '$state', '$stateParams', 'OperationsModel', 'ListingsModel', '$ngRedux', function(
-        $scope, $state, $stateParams, OperationsModel, ListingsModel, $ngRedux) {
+    .controller('ListingGetCtrl', ['$scope', '$state', '$stateParams', 'OperationsModel', 'ListingsModel', '$ngRedux', 
+      function($scope, $state, $stateParams, OperationsModel, ListingsModel, $ngRedux) {
 
         var listingGetCtrl = this;
 

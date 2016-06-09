@@ -8,8 +8,8 @@ angular.module('resources.operations.mutualfundget', [])
             })
         ;
     })
-    .controller('MutualFundGetCtrl', ['$scope', '$state', '$stateParams', 'OperationsModel', 'MutualFundModel', '$ngRedux', function(
-        $scope, $state, $stateParams, OperationsModel, MutualFundModel, $ngRedux) {
+    .controller('MutualFundGetCtrl', ['$scope', '$state', '$stateParams', 'OperationsModel', 'MutualFundModel', '$ngRedux', 
+      function($scope, $state, $stateParams, OperationsModel, MutualFundModel, $ngRedux) {
 
         var mutualFundGetCtrl = this;
 

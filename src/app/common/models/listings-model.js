@@ -1,5 +1,5 @@
 angular.module('marketdata.models.listings', [])
-    .service('ListingsModel', function ($http, $q) {
+    .service('ListingsModel', ['$http', '$q', function ($http, $q) {
         var model = this,
             URLS = {
                 GetAll: 'https://accapi.biqh.nl:443/marketdata/v1/Listing/GetAll?',
@@ -49,5 +49,5 @@ angular.module('marketdata.models.listings', [])
                 cacheListings = result;
               });
         };        
-    })
+    }])
 ;

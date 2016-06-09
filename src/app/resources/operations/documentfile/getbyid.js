@@ -10,7 +10,9 @@ angular.module('resources.operations.documentfilegetbyid', [
             })
         ;
     })
-    .controller('DocumentGetByIdCtrl', function DocumentGetByIdCtrl($state, $stateParams, OperationsModel) {
+    .controller('DocumentGetByIdCtrl', ['$state', '$stateParams', 'OperationsModel', 
+        function($state, $stateParams, OperationsModel) {
+
         var documentGetByIdCtrl = this;
 
         function returnToOperations() {
@@ -38,5 +40,5 @@ angular.module('resources.operations.documentfilegetbyid', [
 
         documentGetByIdCtrl.cancelCalling = cancelCalling;
         documentGetByIdCtrl.callDocumentGetById = callDocumentGetById;
-    })
+    }])
 ;

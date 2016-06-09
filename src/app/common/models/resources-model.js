@@ -1,5 +1,5 @@
 angular.module('marketdata.models.resources', [])
-    .service('ResourcesModel', function ($http, $q) {
+    .service('ResourcesModel', ['$http', '$q', function ($http, $q) {
         var model = this,
             URLS = {
                 FETCH: 'src/data/resources.json'
@@ -54,5 +54,5 @@ angular.module('marketdata.models.resources', [])
 
             return deferred.promise;
         };
-    })
+    }])
 ;

@@ -8,8 +8,8 @@ angular.module('resources.operations.listinggetbycategoryid', [])
             })
         ;
     })
-    .controller('ListingGetByCategoryIdCtrl', ['$scope', '$state', '$stateParams', 'OperationsModel', 'ListingsModel', '$ngRedux', function(
-        $scope, $state, $stateParams, OperationsModel, ListingsModel, $ngRedux) {
+    .controller('ListingGetByCategoryIdCtrl', ['$scope', '$state', '$stateParams', 'OperationsModel', 'ListingsModel', '$ngRedux', 
+      function($scope, $state, $stateParams, OperationsModel, ListingsModel, $ngRedux) {
 
         var listingGetByCategoryIdCtrl = this;
 

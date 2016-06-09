@@ -1,5 +1,5 @@
 angular.module('marketdata.models.mutualfund', [])
-    .service('MutualFundModel', function ($http, $q) {
+    .service('MutualFundModel', ['$http', '$q', function($http, $q) {
         var model = this,
             URLS = {
                 Get: 'https://accapi.biqh.nl:443/marketdata/v1/MutualFund/Get?'
@@ -23,5 +23,5 @@ angular.module('marketdata.models.mutualfund', [])
                 cacheMutualFund = result;
               });
         };
-    })
+    }])
 ;
