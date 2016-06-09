@@ -29,9 +29,10 @@ function reduxConfig($ngReduxProvider) {
 function rootReducer(state, action) {
   if (angular.isUndefined(state)) {
     return {
-      searchListingId: '000000',
-      searchCategoryCode: 'DLG',
-      searchApiKey: '00000000-0000-0000-0000-000000000000'
+      searchCategoryId: '',
+      searchListingId: '',
+      searchCategoryCode: '',
+      searchApiKey: ''
     };
   }
 
@@ -51,7 +52,15 @@ function rootReducer(state, action) {
     case 'SEARCH_LISTING_GET':
       state.searchListingId = action.payload.searchListingId;
       state.searchApiKey = action.payload.searchApiKey;
-      break;            
+      break;
+    case 'SEARCH_LISTING_GETBYCATEGORYID':
+      state.searchCategoryId = action.payload.searchCategoryId;
+      state.searchApiKey = action.payload.searchApiKey;
+      break;
+    case 'SEARCH_MUTUALFUND_GET':
+      state.searchListingId = action.payload.searchListingId;
+      state.searchApiKey = action.payload.searchApiKey;
+      break;
   }
 
   return state;

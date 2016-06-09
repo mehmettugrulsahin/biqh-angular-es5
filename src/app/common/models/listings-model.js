@@ -4,6 +4,7 @@ angular.module('marketdata.models.listings', [])
             URLS = {
                 GetAll: 'https://accapi.biqh.nl:443/marketdata/v1/Listing/GetAll?',
                 Get: 'https://accapi.biqh.nl:443/marketdata/v1/Listing/Get?',
+                GetByCategoryId: 'https://accapi.biqh.nl:443/marketdata/v1/Listing/GetByCategoryId?',
             },
             listings, 
             listing;
@@ -37,6 +38,15 @@ angular.module('marketdata.models.listings', [])
             : $http.get(URLS.Get + 'sharecompanyListingId=' + listingId + '&api_key=' + apiKey)
               .success(function (result) {
                 cacheListing = result;
+              });
+        };
+
+        model.getbycategoryid = function (categoryId, apiKey) {
+          return (listings)
+            ? $q.when(listings)
+            : $http.get(URLS.GetByCategoryId + 'categoryId=' + categoryId + '&api_key=' + apiKey)
+              .success(function (result) {
+                cacheListings = result;
               });
         };        
     })

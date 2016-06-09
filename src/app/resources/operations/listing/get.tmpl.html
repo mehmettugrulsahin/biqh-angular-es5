@@ -7,7 +7,6 @@
   </md-card-title>
   <md-card-content>
     <md-content layout-gt-sm="row" layout-padding>
-      <div>
         <md-input-container>
           <label>Listing ID</label>
           <input ng-model="searchListingId" ng-required="true" ng-minlength="1" ng-maxlength="10"></input>
@@ -16,7 +15,6 @@
           <label>API Key</label>
           <input ng-model="searchApiKey" ng-required="true" ng-minlength="1" ng-maxlength="40"></input>
         </md-input-container>            
-      </div>
     </md-content>
     <md-card-actions layout="row" layout-align="begin center">
       <md-button md-no-ink md-raised-button ng-click="listingGetCtrl.callListingGet()" class="md-raised md-raised-button md-primary">
@@ -28,7 +26,6 @@
     </md-card-actions>
   </md-card-content>
 </md-card>
-
 <md-card ng-if="listingGetCtrl.listing">
   <md-card-content>
     <md-content layout-gt-sm="row">

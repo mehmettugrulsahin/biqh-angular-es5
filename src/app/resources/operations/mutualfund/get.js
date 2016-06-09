@@ -1,6 +1,4 @@
-angular.module('resources.operations.mutualfundget', [
-
-])
+angular.module('resources.operations.mutualfundget', [])
     .config(function ($stateProvider) {
         $stateProvider
             .state('marketdata.resources.operations.mutualfundget', {
@@ -10,21 +8,24 @@ angular.module('resources.operations.mutualfundget', [
             })
         ;
     })
-    .controller('MutualFundGetCtrl', function MutualFundGetCtrl($state, $stateParams, OperationsModel) {
+    .controller('MutualFundGetCtrl', ['$scope', '$state', '$stateParams', 'OperationsModel', 'MutualFundModel', '$ngRedux', function(
+        $scope, $state, $stateParams, OperationsModel, MutualFundModel, $ngRedux) {
+
         var mutualFundGetCtrl = this;
+
+        var unsubscribe = $ngRedux.connect(function mapStateToCtrl(state) {
+          return {
+            searchListingId: state.root.searchListingId, 
+            searchApiKey: state.root.searchApiKey
+          };
+        }, {})(mutualFundGetCtrl);
+
+        $scope.$on('$destroy', unsubscribe);
 
         function returnToOperations() {
             $state.go('marketdata.resources.operations', {
                 resource: $stateParams.resource
             })
-        }
-
-        function callMutualFundGet() {
-
-        }
-
-        function cancelCalling() {
-            returnToOperations();
         }
 
         OperationsModel.getOperationById($stateParams.operationId)
@@ -36,7 +37,32 @@ angular.module('resources.operations.mutualfundget', [
                 }
             });
 
+        function cancelCalling() {
+            returnToOperations();
+        }
+
+        function callMutualFundGet() {
+          MutualFundModel.get($scope.searchListingId, $scope.searchApiKey)
+              .success(function (mutualfund) {
+                  if (mutualfund) {
+                      mutualFundGetCtrl.mutualfund = mutualfund;
+                      $ngRedux.dispatch({
+                        type: 'SEARCH_MUTUALFUND_GET', 
+                        payload: {
+                          "searchListingId": $scope.searchListingId,
+                          "searchApiKey": $scope.searchApiKey
+                        }
+                      });
+                  } else {
+                      returnToOperations();
+                  }
+              });
+        }
+
         mutualFundGetCtrl.cancelCalling = cancelCalling;
         mutualFundGetCtrl.callMutualFundGet = callMutualFundGet;
-    })
+
+        $scope.searchListingId = mutualFundGetCtrl.searchListingId;
+        $scope.searchApiKey = mutualFundGetCtrl.searchApiKey;        
+    }])
 ;

@@ -1,6 +1,4 @@
-angular.module('resources.operations.listinggetbycategoryid', [
-
-])
+angular.module('resources.operations.listinggetbycategoryid', [])
     .config(function ($stateProvider) {
         $stateProvider
             .state('marketdata.resources.operations.listinggetbycategoryid', {
@@ -10,21 +8,24 @@ angular.module('resources.operations.listinggetbycategoryid', [
             })
         ;
     })
-    .controller('ListingGetByCategoryIdCtrl', function ListingGetByCategoryIdCtrl($state, $stateParams, OperationsModel) {
+    .controller('ListingGetByCategoryIdCtrl', ['$scope', '$state', '$stateParams', 'OperationsModel', 'ListingsModel', '$ngRedux', function(
+        $scope, $state, $stateParams, OperationsModel, ListingsModel, $ngRedux) {
+
         var listingGetByCategoryIdCtrl = this;
+
+        var unsubscribe = $ngRedux.connect(function mapStateToCtrl(state) {
+          return {
+            searchCategoryId: state.root.searchCategoryId, 
+            searchApiKey: state.root.searchApiKey
+          };
+        }, {})(listingGetByCategoryIdCtrl);
+
+        $scope.$on('$destroy', unsubscribe);
 
         function returnToOperations() {
             $state.go('marketdata.resources.operations', {
                 resource: $stateParams.resource
             })
-        }
-
-        function callListingGetByCategoryId() {
-
-        }
-
-        function cancelCalling() {
-            returnToOperations();
         }
 
         OperationsModel.getOperationById($stateParams.operationId)
@@ -36,7 +37,32 @@ angular.module('resources.operations.listinggetbycategoryid', [
                 }
             });
 
+        function cancelCalling() {
+            returnToOperations();
+        }
+
+        function callListingGetByCategoryId() {
+          ListingsModel.getbycategoryid($scope.searchCategoryId, $scope.searchApiKey)
+              .success(function (listings) {
+                  if (listings) {
+                      listingGetByCategoryIdCtrl.listings = listings;
+                      $ngRedux.dispatch({
+                        type: 'SEARCH_LISTING_GETBYCATEGORYID', 
+                        payload: {
+                          "searchCategoryId": $scope.searchCategoryId,
+                          "searchApiKey": $scope.searchApiKey
+                        }
+                      });
+                  } else {
+                      returnToOperations();
+                  }
+              });
+        }
+
         listingGetByCategoryIdCtrl.cancelCalling = cancelCalling;
         listingGetByCategoryIdCtrl.callListingGetByCategoryId = callListingGetByCategoryId;
-    })
+
+        $scope.searchCategoryId = listingGetByCategoryIdCtrl.searchCategoryId;
+        $scope.searchApiKey = listingGetByCategoryIdCtrl.searchApiKey;        
+    }])
 ;

@@ -7,12 +7,45 @@
   </md-card-title>
   <md-card-content>
     <md-content layout-gt-sm="row" layout-padding>
-      <div>
-      </div>
+        <md-input-container>
+          <label>Listing ID</label>
+          <input ng-model="searchListingId" ng-required="true" ng-minlength="1" ng-maxlength="10"></input>
+        </md-input-container>
+        <md-input-container>
+          <label>API Key</label>
+          <input ng-model="searchApiKey" ng-required="true" ng-minlength="1" ng-maxlength="40"></input>
+        </md-input-container>            
     </md-content>
-    <md-card-actions layout="row" layout-align="end center">
-      <md-button md-no-ink md-raised-button type="submit" class="md-raised md-raised-button md-primary">Get Market Data</md-button>
-      <md-button md-no-ink md-raised-button class="md-raised md-raised-button" ng-click="mutualFundGetCtrl.cancelCalling()">Cancel</md-button>
+    <md-card-actions layout="row" layout-align="begin center">
+      <md-button md-no-ink md-raised-button ng-click="mutualFundGetCtrl.callMutualFundGet()" class="md-raised md-raised-button md-primary">
+        Get Market Data
+      </md-button>
+      <md-button md-no-ink md-raised-button class="md-raised md-raised-button" ng-click="mutualFundGetCtrl.cancelCalling()">
+        Cancel
+      </md-button>
     </md-card-actions>
+  </md-card-content>
+</md-card>
+<md-card ng-if="mutualFundGetCtrl.listing">
+  <md-card-content>
+    <md-content layout-gt-sm="row">
+      Mutual Fund
+    </md-content>
+    <md-content layout-gt-sm="row" layout-padding>
+      <table>
+        <tr>
+          <th>Id</th>
+          <th>Name</th>
+          <th>ISIN</th>
+          <th>NetAssetValue</th>
+        </tr>
+        <tr>
+          <td>{{ listingGetCtrl.listing.Id }}</td>
+          <td>{{ listingGetCtrl.listing.Name }}</td>
+          <td>{{ listingGetCtrl.listing.ISIN }}</td>
+          <td>{{ listingGetCtrl.listing.NetAssetValue }}</td>
+        </tr>
+      </table>
+    </md-content>
   </md-card-content>
 </md-card>

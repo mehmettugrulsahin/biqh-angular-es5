@@ -21,7 +21,7 @@
             <input ng-model="searchApiKey" ng-required="true" ng-minlength="1" ng-maxlength="40"></input>
           </md-input-container>
       </md-content>
-    </md-content>
+    </md-content>    
     <md-card-actions layout="row" layout-align="begin center">
       <md-button md-no-ink md-raised-button ng-click="categoryGetByIdAndCodeCtrl.callGetSubCategory()" class="md-raised md-raised-button md-primary">
         Get Market Data
@@ -32,7 +32,6 @@
     </md-card-actions>
   </md-card-content>
 </md-card>
-
 <md-card ng-if="categoryGetByIdAndCodeCtrl.subCategories">
   <md-card-content>
     <md-content layout-gt-sm="row">

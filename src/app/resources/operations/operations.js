@@ -9,7 +9,8 @@ angular.module('resources.operations', [
     'marketdata.models.resources',
     'marketdata.models.operations',
     'marketdata.models.categories', 
-    'marketdata.models.listings'
+    'marketdata.models.listings', 
+    'marketdata.models.mutualfund'
 ])
     .config(function ($stateProvider, $mdIconProvider) {
         $stateProvider
