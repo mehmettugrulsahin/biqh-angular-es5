@@ -29,18 +29,29 @@ function reduxConfig($ngReduxProvider) {
 function rootReducer(state, action) {
   if (angular.isUndefined(state)) {
     return {
+      searchListingId: '000000',
       searchCategoryCode: 'DLG',
       searchApiKey: '00000000-0000-0000-0000-000000000000'
     };
   }
 
   switch (action.type) {
-    case 'UPDATE_SEARCH_CATEGORY_CODE':
-      state.searchCategoryCode = action.payload;
+    case 'SEARCH_CATEGORY_GETBYCODE':
+      state.searchCategoryCode = action.payload.searchCategoryCode;
+      state.searchApiKey = action.payload.searchApiKey;
       break;
-    case 'UPDATE_SEARCH_API_KEY':
-      state.searchApiKey = action.payload;
+    case 'SEARCH_CATEGORY_GETBYIDANDCODE':
+      state.searchListingId = action.payload.searchListingId;
+      state.searchCategoryCode = action.payload.searchCategoryCode;
+      state.searchApiKey = action.payload.searchApiKey;
       break;
+    case 'SEARCH_LISTING_GETALL':
+      state.searchApiKey = action.payload.searchApiKey;
+      break;
+    case 'SEARCH_LISTING_GET':
+      state.searchListingId = action.payload.searchListingId;
+      state.searchApiKey = action.payload.searchApiKey;
+      break;            
   }
 
   return state;

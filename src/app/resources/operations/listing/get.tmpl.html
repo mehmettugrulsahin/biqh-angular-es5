@@ -9,14 +9,54 @@
     <md-content layout-gt-sm="row" layout-padding>
       <div>
         <md-input-container>
-          <label>Listing Id</label>
-          <input>
+          <label>Listing ID</label>
+          <input ng-model="searchListingId" ng-required="true" ng-minlength="1" ng-maxlength="10"></input>
         </md-input-container>
+        <md-input-container>
+          <label>API Key</label>
+          <input ng-model="searchApiKey" ng-required="true" ng-minlength="1" ng-maxlength="40"></input>
+        </md-input-container>            
       </div>
     </md-content>
-    <md-card-actions layout="row" layout-align="end center">
-      <md-button md-no-ink md-raised-button type="submit" class="md-raised md-raised-button md-primary">Get Market Data</md-button>
-      <md-button md-no-ink md-raised-button class="md-raised md-raised-button" ng-click="listingGetCtrl.cancelCalling()">Cancel</md-button>
+    <md-card-actions layout="row" layout-align="begin center">
+      <md-button md-no-ink md-raised-button ng-click="listingGetCtrl.callListingGet()" class="md-raised md-raised-button md-primary">
+        Get Market Data
+      </md-button>
+      <md-button md-no-ink md-raised-button class="md-raised md-raised-button" ng-click="listingGetCtrl.cancelCalling()">
+        Cancel
+      </md-button>
     </md-card-actions>
+  </md-card-content>
+</md-card>
+
+<md-card ng-if="listingGetCtrl.listing">
+  <md-card-content>
+    <md-content layout-gt-sm="row">
+      Listing
+    </md-content>
+    <md-content layout-gt-sm="row" layout-padding>
+      <table>
+        <tr>
+          <th>Name</th>
+          <th>Isin</th>
+          <th>Trade</th>
+          <th>Currency</th>
+          <th>Previous Close</th>
+          <th>Change</th>
+          <th>Percentage Change</th>
+          <th>Listing Id</th>
+        </tr>
+        <tr>
+          <td>{{ listingGetCtrl.listing.Name }}</td>
+          <td>{{ listingGetCtrl.listing.Isin }}</td>
+          <td>{{ listingGetCtrl.listing.Trade }}</td>
+          <td>{{ listingGetCtrl.listing.Currency }}</td>
+          <td>{{ listingGetCtrl.listing.PrvClose }}</td>
+          <td>{{ listingGetCtrl.listing.Change }}</td>
+          <td>{{ listingGetCtrl.listing.PctChange }}</td>
+          <td>{{ listingGetCtrl.listing.ShareCompanyListingId }}</td>
+        </tr>
+      </table>
+    </md-content>
   </md-card-content>
 </md-card>

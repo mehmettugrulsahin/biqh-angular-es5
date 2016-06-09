@@ -8,7 +8,8 @@ angular.module('resources.operations', [
     'resources.operations.mutualfundget',
     'marketdata.models.resources',
     'marketdata.models.operations',
-    'marketdata.models.categories'
+    'marketdata.models.categories', 
+    'marketdata.models.listings'
 ])
     .config(function ($stateProvider, $mdIconProvider) {
         $stateProvider

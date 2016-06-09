@@ -197,3 +197,7 @@ tbody:hover > tr:hover td {
   color:#2d2d2d;
   @include opacity(1.0);
 }
+
+md-card {
+  width: 1000px;
+}

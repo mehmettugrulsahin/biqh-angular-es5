@@ -31,7 +31,7 @@ angular.module('marketdata.models.categories', [])
                 });
         };
 
-        model.callGetSubCategory = function (listingId, categoryCode, apiKey) {
+        model.getSubCategory = function (listingId, categoryCode, apiKey) {
           return (subCategories)
             ? $q.when(subCategories)
             : $http.get(URLS.GetSubCategory + 'sharecompanyListingId=' + listingId + '&categoryCode=' + categoryCode + '&api_key=' + apiKey)

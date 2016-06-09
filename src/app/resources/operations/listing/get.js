@@ -1,6 +1,4 @@
-angular.module('resources.operations.listingget', [
-
-])
+angular.module('resources.operations.listingget', [])
     .config(function ($stateProvider) {
         $stateProvider
             .state('marketdata.resources.operations.listingget', {
@@ -10,21 +8,24 @@ angular.module('resources.operations.listingget', [
             })
         ;
     })
-    .controller('ListingGetCtrl', function ListingGetCtrl($state, $stateParams, OperationsModel) {
+    .controller('ListingGetCtrl', ['$scope', '$state', '$stateParams', 'OperationsModel', 'ListingsModel', '$ngRedux', function(
+        $scope, $state, $stateParams, OperationsModel, ListingsModel, $ngRedux) {
+
         var listingGetCtrl = this;
+
+        var unsubscribe = $ngRedux.connect(function mapStateToCtrl(state) {
+          return {
+            searchListingId: state.root.searchListingId, 
+            searchApiKey: state.root.searchApiKey
+          };
+        }, {})(listingGetCtrl);
+
+        $scope.$on('$destroy', unsubscribe);
 
         function returnToOperations() {
             $state.go('marketdata.resources.operations', {
                 resource: $stateParams.resource
             })
-        }
-
-        function callListingGet() {
-
-        }
-
-        function cancelCalling() {
-            returnToOperations();
         }
 
         OperationsModel.getOperationById($stateParams.operationId)
@@ -35,8 +36,33 @@ angular.module('resources.operations.listingget', [
                     returnToOperations();
                 }
             });
+    
+        function cancelCalling() {
+            returnToOperations();
+        }
+
+        function callListingGet() {
+          ListingsModel.get($scope.searchListingId, $scope.searchApiKey)
+              .success(function (listing) {
+                  if (listing) {
+                      listingGetCtrl.listing = listing;
+                      $ngRedux.dispatch({
+                        type: 'SEARCH_LISTING_GET', 
+                        payload: {
+                          "searchListingId": $scope.searchListingId,
+                          "searchApiKey": $scope.searchApiKey
+                        }
+                      });
+                  } else {
+                      returnToOperations();
+                  }
+              });
+        }
 
         listingGetCtrl.cancelCalling = cancelCalling;
         listingGetCtrl.callListingGet = callListingGet;
-    })
+
+        $scope.searchListingId = listingGetCtrl.searchListingId;
+        $scope.searchApiKey = listingGetCtrl.searchApiKey;
+    }])
 ;

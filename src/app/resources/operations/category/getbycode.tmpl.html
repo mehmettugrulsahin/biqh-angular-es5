@@ -9,19 +9,21 @@
     <md-content layout-gt-sm="row" layout-padding>
         <md-input-container>
           <label>Category Code</label>
-          <input ng-model="searchCategoryCode" ng-required="true" ng-minlength="1" ng-maxlength="10">
-          </input>
+          <input ng-model="searchCategoryCode" ng-required="true" ng-minlength="1" ng-maxlength="10"></input>
         </md-input-container>
         <md-input-container>
           <label>API Key</label>
-          <input ng-model="searchApiKey" ng-required="true" ng-minlength="1" ng-maxlength="40">
-          </input>
+          <input ng-model="searchApiKey" ng-required="true" ng-minlength="1" ng-maxlength="40"></input>
         </md-input-container>
     </md-content>
 
-    <md-card-actions layout="row" layout-align="end center">
-      <md-button md-no-ink md-raised-button ng-click="categoryGetByCodeCtrl.callCategoryGetByCode()" class="md-raised md-raised-button md-primary">Get Market Data</md-button>
-      <md-button md-no-ink md-raised-button class="md-raised md-raised-button" ng-click="categoryGetByCodeCtrl.cancelCalling()">Cancel</md-button>
+    <md-card-actions layout="row" layout-align="begin center">
+      <md-button md-no-ink md-raised-button ng-click="categoryGetByCodeCtrl.callCategoryGetByCode()" class="md-raised md-raised-button md-primary">
+        Get Market Data
+      </md-button>
+      <md-button md-no-ink md-raised-button class="md-raised md-raised-button" ng-click="categoryGetByCodeCtrl.cancelCalling()">
+        Cancel
+      </md-button>
     </md-card-actions>
   </md-card-content>
 </md-card>
