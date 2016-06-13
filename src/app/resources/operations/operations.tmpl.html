@@ -1,10 +1,16 @@
 <md-card>
-  <md-card-title>
-    <md-card-title-text>
-      <span class="md-headline">{{operationsListCtrl.getCurrentResourceName()}} Resource Operations</span>
-    </md-card-title-text>
-  </md-card-title>
-
+  <md-toolbar class="md-hue-2">
+    <md-card-title>
+      <md-card-title-text>
+        <div>        
+          <md-button md-raised-button ng-click="operationsListCtrl.showCredit()" class="md-raised md-raised-button md-primary">
+            Credits
+          </md-button>
+          <span class="md-headline">{{operationsListCtrl.getCurrentResourceName()}} Resource Operations</span>
+        </div>
+      </md-card-title-text>
+    </md-card-title>
+  </md-toolbar>
   <md-list>
     <md-list-item ng-repeat="operation in operationsListCtrl.operations | filter:{resource:operationsListCtrl.getCurrentResourceName()}">
 

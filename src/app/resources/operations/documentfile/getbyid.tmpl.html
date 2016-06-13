@@ -1,10 +1,12 @@
 <md-card>
-  <md-card-title>
-    <md-card-title-text>
-      <span class="md-headline">{{documentGetByIdCtrl.operation.name}}</span>
-      <span class="md-subhead">{{documentGetByIdCtrl.operation.description}}</span>
-    </md-card-title-text>
-  </md-card-title>
+  <md-toolbar class="md-hue-2">
+    <md-card-title>
+      <md-card-title-text>
+        <span class="md-headline">{{documentGetByIdCtrl.operation.name}}</span>
+        <span class="md-subhead">{{documentGetByIdCtrl.operation.description}}</span>
+      </md-card-title-text>
+    </md-card-title>
+  </md-toolbar>
   <md-card-content>
     <md-content layout-gt-sm="row" layout-padding>
       <div>
@@ -14,7 +16,7 @@
         </md-input-container>
       </div>
     </md-content>
-    <md-card-actions layout="row" layout-align="end center">
+    <md-card-actions layout="row" layout-align="begin center">
       <md-button md-no-ink md-raised-button type="submit" class="md-raised md-raised-button md-primary">Get Market Data</md-button>
       <md-button md-no-ink md-raised-button class="md-raised md-raised-button" ng-click="documentGetByIdCtrl.cancelCalling()">Cancel</md-button>
     </md-card-actions>

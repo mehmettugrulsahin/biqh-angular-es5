@@ -25,8 +25,8 @@ angular.module('resources.operations', [
             });
         $mdIconProvider.icon('share', './src/assets/svg/share.svg', 24);
     })
-    .controller('OperationsListCtrl', ['$state', '$stateParams', 'ResourcesModel', 'OperationsModel', 
-      function($state, $stateParams, ResourcesModel, OperationsModel) {
+    .controller('OperationsListCtrl', ['$state', '$stateParams', 'ResourcesModel', 'OperationsModel', '$mdBottomSheet', 
+      function($state, $stateParams, ResourcesModel, OperationsModel, $mdBottomSheet) {
         
         var operationsListCtrl = this;
 
@@ -77,8 +77,32 @@ angular.module('resources.operations', [
           }
         }
 
+        function showCredit() {
+          $mdBottomSheet.show({
+            controller: OperationSheetController, 
+            controllerAs: 'vm',
+            templateUrl: 'src/app/resources/operations/bottomsheet.tmpl.html', 
+            parent: angular.element(document.querySelector('#content'))
+          });
+
+          function OperationSheetController() {
+            this.items = [
+              { name: 'E-Mail', icon: 'email', icon_url: '/src/assets/svg/email.svg'}, 
+              { name: 'Skype', icon: 'skype', icon_url: '/src/assets/svg/skype.svg'}, 
+              { name: 'GitHub', icon: 'github', icon_url: '/src/assets/svg/github.svg'}, 
+              { name: 'Bitbucket', icon: 'bitbucket', icon_url: '/src/assets/svg/bitbucket.svg'}, 
+              { name: 'Free Code Camp', icon: 'freecodecamp', icon_url: '/src/assets/svg/freecodecamp.svg'}, 
+              { name: 'CodePen', icon: 'codepen', icon_url: '/src/assets/svg/codepen.svg'}
+            ];
+            this.performAction = function(action) {
+              $mdBottomSheet.hide();
+            };
+          }
+        }
+
         operationsListCtrl.getCurrentResource = ResourcesModel.getCurrentResource;
         operationsListCtrl.getCurrentResourceName = ResourcesModel.getCurrentResourceName;
         operationsListCtrl.callOperation = callOperation;
+        operationsListCtrl.showCredit = showCredit;
     }])
 ;

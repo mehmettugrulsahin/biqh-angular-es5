@@ -1,0 +1,19 @@
+<md-bottom-sheet class="md-list md-has-header">
+
+	<md-subheader>
+		Contact <span class='name'>Mehmet Tuğrul Şahin</span>
+	</md-subheader>
+
+    <div layout="row" flex>
+	<md-list>
+		<md-input-container ng-repeat='item in vm.items'>
+			<md-button ng-click='vm.performAction()'>
+				<md-icon md-svg-icon='{{item.icon_url}}'></md-icon>
+				{{item.name}}			
+			</md-button>
+		</md-input-container>
+	</md-list>
+    </div>    
+</md-bottom-sheet>
+
+
