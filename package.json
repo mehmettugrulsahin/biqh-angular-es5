@@ -16,7 +16,8 @@
     "angular-material": "^1.0.9",
     "angular-ui-router": "^0.3.0",
     "http-server": "^0.9.0",
-    "lodash": "^4.13.1"
+    "lodash": "^4.13.1",
+    "ng-table": "^0.8.3"
   },
   "dependencies": {
     "ng-redux": "^3.3.4-beta.0",

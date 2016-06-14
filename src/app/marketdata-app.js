@@ -4,7 +4,8 @@ angular.module('MarketData', [
     'ui.router',
     'ngRedux',
     'resources',
-    'resources.operations'
+    'resources.operations', 
+    'ngTable'
 ])
   .config(routerConfig)
   .config(reduxConfig)

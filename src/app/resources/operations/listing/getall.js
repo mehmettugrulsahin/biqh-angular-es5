@@ -8,8 +8,8 @@ angular.module('resources.operations.listinggetall', [])
             })
         ;
     })
-    .controller('ListingGetAllCtrl', ['$scope', '$state', '$stateParams', 'OperationsModel', 'ListingsModel', '$ngRedux', 
-      function($scope, $state, $stateParams, OperationsModel, ListingsModel, $ngRedux) {
+    .controller('ListingGetAllCtrl', ['$scope', '$state', '$stateParams', 'OperationsModel', 'ListingsModel', '$ngRedux', 'NgTableParams', 
+      function($scope, $state, $stateParams, OperationsModel, ListingsModel, $ngRedux, NgTableParams) {
 
         var listingGetAllCtrl = this;
 
@@ -45,6 +45,7 @@ angular.module('resources.operations.listinggetall', [])
               .success(function (listings) {
                   if (listings) {
                       listingGetAllCtrl.listings = listings;
+                      listingGetAllCtrl.listingsTableParams = new NgTableParams({}, { dataset: listings});
                       $ngRedux.dispatch({
                         type: 'SEARCH_LISTING_GETALL', 
                         payload: {

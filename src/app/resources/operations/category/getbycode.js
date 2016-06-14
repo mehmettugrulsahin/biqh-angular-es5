@@ -8,8 +8,8 @@ angular.module('resources.operations.categorygetbycode', [])
             })
         ;
     })
-    .controller('CategoryGetByCodeCtrl', ['$scope', '$state', '$stateParams', 'OperationsModel', 'CategoriesModel', '$ngRedux', 
-      function($scope, $state, $stateParams, OperationsModel, CategoriesModel, $ngRedux) {
+    .controller('CategoryGetByCodeCtrl', ['$scope', '$state', '$stateParams', 'OperationsModel', 'CategoriesModel', '$ngRedux', 'NgTableParams', 
+      function($scope, $state, $stateParams, OperationsModel, CategoriesModel, $ngRedux, NgTableParams) {
 
       var categoryGetByCodeCtrl = this;
 
@@ -46,6 +46,7 @@ angular.module('resources.operations.categorygetbycode', [])
             .success(function (category) {
                 if (category) {
                     categoryGetByCodeCtrl.category = category;
+                    categoryGetByCodeCtrl.categoriesTableParams = new NgTableParams({}, { dataset: category.Categories});
                     $ngRedux.dispatch({
                       type: 'SEARCH_CATEGORY_GETBYCODE', 
                       payload: {

@@ -34,20 +34,14 @@
       Mutual Fund
     </md-content>
     <md-content layout-gt-sm="row" layout-padding>
-      <table>
+    <table id="gradient-style" ng-table="mutualFundGetCtrl.mutualfundTableParams" class="table table-condensed table-bordered table-striped">
         <tr>
-          <th>Id</th>
-          <th>Name</th>
-          <th>ISIN</th>
-          <th>NetAssetValue</th>
+            <td title="'Id'">{{mutualFundGetCtrl.mutualfund.Id}}</td>
+            <td title="'Name'">{{mutualFundGetCtrl.mutualfund.Name}}</td>
+            <td title="'ISIN'">{{mutualFundGetCtrl.mutualfund.ISIN}}</td>
+            <td title="'Net Asset Value'">{{mutualFundGetCtrl.mutualfund.NetAssetValue}}</td>
         </tr>
-        <tr>
-          <td>{{ mutualFundGetCtrl.mutualfund.Id }}</td>
-          <td>{{ mutualFundGetCtrl.mutualfund.Name }}</td>
-          <td>{{ mutualFundGetCtrl.mutualfund.ISIN }}</td>
-          <td>{{ mutualFundGetCtrl.mutualfund.NetAssetValue }}</td>
-        </tr>
-      </table>
+    </table>
     </md-content>
   </md-card-content>
 </md-card>

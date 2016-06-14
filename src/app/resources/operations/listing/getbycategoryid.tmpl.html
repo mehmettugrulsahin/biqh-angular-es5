@@ -34,28 +34,18 @@
       Listing
     </md-content>
     <md-content layout-gt-sm="row" layout-padding>
-      <table>
-        <tr>
-          <th>Name</th>
-          <th>Isin</th>
-          <th>Trade</th>
-          <th>Currency</th>
-          <th>Previous Close</th>
-          <th>Change</th>
-          <th>Percentage Change</th>
-          <th>Listing Id</th>
-        </tr>
+    <table id="gradient-style" ng-table="listingGetByCategoryIdCtrl.listingsTableParams" class="table table-condensed table-bordered table-striped">
         <tr ng-repeat="listing in listingGetByCategoryIdCtrl.listings">
-          <td>{{ listing.Name }}</td>
-          <td>{{ listing.Isin }}</td>
-          <td>{{ listing.Trade }}</td>
-          <td>{{ listing.Currency }}</td>
-          <td>{{ listing.PrvClose }}</td>
-          <td>{{ listing.Change }}</td>
-          <td>{{ listing.PctChange }}</td>
-          <td>{{ listing.ShareCompanyListingId }}</td>
+            <td title="'Name'">{{listing.Name}}</td>
+            <td title="'Isin'">{{listing.Isin}}</td>
+            <td title="'Trade'">{{listing.Trade}}</td>
+            <td title="'Currency'">{{listing.Currency}}</td>
+            <td title="'Previous Close'">{{listing.PrvClose}}</td>
+            <td title="'Change'">{{listing.Change}}</td>
+            <td title="'Percentage Change'">{{listing.PctChange}}</td>
+            <td title="'Listing Id'">{{listing.ShareCompanyListingId}}</td>
         </tr>
-      </table>
+    </table>
     </md-content>
   </md-card-content>
 </md-card>

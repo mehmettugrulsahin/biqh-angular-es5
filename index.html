@@ -3,10 +3,13 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width">
+        
         <title>MarketData</title>
 
         <link rel="stylesheet" href="src/assets/css/marketdata.css">
+        <link rel="stylesheet" href="src/assets/css/table.css">
         <link rel="stylesheet" href="/node_modules/angular-material/angular-material.min.css">
+        <link rel="stylesheet" href="/node_modules/ng-table/dist/ng-table.min.css">
 
         <script src="/node_modules/angular/angular.min.js"></script>
         <script src="/node_modules/angular-animate/angular-animate.min.js"></script>
@@ -16,6 +19,7 @@
         <script src="/node_modules/lodash/lodash.min.js"></script>
         <script src="/node_modules/redux/dist/redux.js"></script>
         <script src="/node_modules/ng-redux/dist/ng-redux.js"></script>
+        <script src="/node_modules/ng-table/dist/ng-table.js"></script>
 
         <script src="src/app/marketdata-app.js"></script>
         <script src="src/app/resources/resources.js"></script>
@@ -31,7 +35,7 @@
         <script src="src/app/common/models/operations-model.js"></script>
         <script src="src/app/common/models/categories-model.js"></script>
         <script src="src/app/common/models/listings-model.js"></script>
-        <script src="src/app/common/models/mutualfund-model.js"></script>
+        <script src="src/app/common/models/mutualfund-model.js"></script>        
     </head>
     <body layout="column" ng-cloak>
         <md-toolbar layout='row' ng-controller="MainCtrl as mainCtrl">

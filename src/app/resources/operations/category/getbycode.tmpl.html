@@ -34,37 +34,26 @@
       Category {{categoryGetByCodeCtrl.category.Name}}
     </md-content>
     <md-content layout-gt-sm="row" layout-padding>
-      <table>
-      <tr>
-        <th>Id</th>
-        <th>Code</th>
-        <th>Name</th>
-      </tr>
-      <tr>
-        <td>{{ categoryGetByCodeCtrl.category.Id }}</td>
-        <td>{{ categoryGetByCodeCtrl.category.Code }}</td>
-        <td>{{ categoryGetByCodeCtrl.category.Name }}</td>
-      </tr>
+    <table id="gradient-style" ng-table="categoryGetByCodeCtrl.categoriesTableParams" class="table table-condensed table-bordered table-striped">
+        <tr>
+            <td title="'Id'">{{categoryGetByCodeCtrl.category.Id}}</td>
+            <td title="'Code'">{{categoryGetByCodeCtrl.category.Code}}</td>
+            <td title="'Name'">{{categoryGetByCodeCtrl.category.Name}}</td>
+        </tr>
     </table>
     </md-content>
     <md-content layout-gt-sm="row">
       {{categoryGetByCodeCtrl.category.Name}} sub categories
     </md-content>
     <md-content layout-gt-sm="row" layout-padding>
-      <table>
-        <tr>
-          <th>Id</th>
-          <th>Code</th>
-          <th>Name</th>
-          <th>Sort Order</th>
-        </tr>
+    <table id="gradient-style" ng-table="categoryGetByCodeCtrl.categoriesTableParams" class="table table-condensed table-bordered table-striped">
         <tr ng-repeat="category in categoryGetByCodeCtrl.category.Categories">
-          <td>{{ category.Id }}</td>
-          <td>{{ category.Code }}</td>
-          <td>{{ category.Name }}</td>
-          <td>{{ category.SortOrder }}</td>
+            <td title="'Id'">{{category.Id}}</td>
+            <td title="'Code'">{{category.Code}}</td>
+            <td title="'Name'">{{category.Name}}</td>
+            <td title="'SortOrder'">{{category.SortOrder}}</td>
         </tr>
-      </table>
+    </table>
     </md-content>
   </md-card-content>
 </md-card>

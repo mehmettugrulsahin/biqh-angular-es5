@@ -8,8 +8,8 @@ angular.module('resources.operations.categorygetbyidandcode', [])
             })
         ;
     })
-    .controller('CategoryGetByIdAndCodeCtrl', ['$scope', '$state', '$stateParams', 'OperationsModel', 'CategoriesModel', '$ngRedux', 
-      function($scope, $state, $stateParams, OperationsModel, CategoriesModel, $ngRedux) {
+    .controller('CategoryGetByIdAndCodeCtrl', ['$scope', '$state', '$stateParams', 'OperationsModel', 'CategoriesModel', '$ngRedux', 'NgTableParams', 
+      function($scope, $state, $stateParams, OperationsModel, CategoriesModel, $ngRedux, NgTableParams) {
 
       var categoryGetByIdAndCodeCtrl = this;
 
@@ -47,6 +47,7 @@ angular.module('resources.operations.categorygetbyidandcode', [])
             .success(function (subCategories) {
                 if (subCategories) {
                     categoryGetByIdAndCodeCtrl.subCategories = subCategories;
+                    categoryGetByIdAndCodeCtrl.subCategoriesTableParams = new NgTableParams({}, { dataset: subCategories});
                     $ngRedux.dispatch({
                       type: 'SEARCH_CATEGORY_GETBYIDANDCODE', 
                       payload: {

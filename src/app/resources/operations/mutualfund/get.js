@@ -8,8 +8,8 @@ angular.module('resources.operations.mutualfundget', [])
             })
         ;
     })
-    .controller('MutualFundGetCtrl', ['$scope', '$state', '$stateParams', 'OperationsModel', 'MutualFundModel', '$ngRedux', 
-      function($scope, $state, $stateParams, OperationsModel, MutualFundModel, $ngRedux) {
+    .controller('MutualFundGetCtrl', ['$scope', '$state', '$stateParams', 'OperationsModel', 'MutualFundModel', '$ngRedux', 'NgTableParams', 
+      function($scope, $state, $stateParams, OperationsModel, MutualFundModel, $ngRedux, NgTableParams) {
 
         var mutualFundGetCtrl = this;
 
@@ -46,6 +46,7 @@ angular.module('resources.operations.mutualfundget', [])
               .success(function (mutualfund) {
                   if (mutualfund) {
                       mutualFundGetCtrl.mutualfund = mutualfund;
+                      mutualFundGetCtrl.mutualfundTableParams = new NgTableParams({}, { dataset: mutualfund});
                       $ngRedux.dispatch({
                         type: 'SEARCH_MUTUALFUND_GET', 
                         payload: {

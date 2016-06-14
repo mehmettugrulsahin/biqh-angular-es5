@@ -40,17 +40,12 @@
       SubCategories
     </md-content>
     <md-content layout-gt-sm="row" layout-padding>
-      <table>
-        <tr>
-          <th>Id</th>
-          <th>Code</th>
-          <th>Name</th>
-        </tr>
-        <tr ng-repeat="subCategory in categoryGetByIdAndCodeCtrl.subCategories">
-          <td>{{ subCategory.Id }}</td>
-          <td>{{ subCategory.Code }}</td>
-          <td>{{ subCategory.Name }}</td>
-        </tr>
+      <table id="gradient-style" ng-table="categoryGetByIdAndCodeCtrl.subCategoriesTableParams" class="table table-condensed table-bordered table-striped">
+          <tr ng-repeat="subCategory in categoryGetByIdAndCodeCtrl.subCategories">
+              <td title="'Id'">{{subCategory.Id}}</td>
+              <td title="'Code'">{{subCategory.Code}}</td>
+              <td title="'Name'">{{subCategory.Name}}</td>
+          </tr>
       </table>
     </md-content>
   </md-card-content>

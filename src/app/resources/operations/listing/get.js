@@ -8,8 +8,8 @@ angular.module('resources.operations.listingget', [])
             })
         ;
     })
-    .controller('ListingGetCtrl', ['$scope', '$state', '$stateParams', 'OperationsModel', 'ListingsModel', '$ngRedux', 
-      function($scope, $state, $stateParams, OperationsModel, ListingsModel, $ngRedux) {
+    .controller('ListingGetCtrl', ['$scope', '$state', '$stateParams', 'OperationsModel', 'ListingsModel', '$ngRedux', 'NgTableParams', 
+      function($scope, $state, $stateParams, OperationsModel, ListingsModel, $ngRedux, NgTableParams) {
 
         var listingGetCtrl = this;
 
@@ -46,6 +46,7 @@ angular.module('resources.operations.listingget', [])
               .success(function (listing) {
                   if (listing) {
                       listingGetCtrl.listing = listing;
+                      listingGetCtrl.listingTableParams = new NgTableParams({}, { dataset: listing});
                       $ngRedux.dispatch({
                         type: 'SEARCH_LISTING_GET', 
                         payload: {

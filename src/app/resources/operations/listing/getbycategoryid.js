@@ -8,8 +8,8 @@ angular.module('resources.operations.listinggetbycategoryid', [])
             })
         ;
     })
-    .controller('ListingGetByCategoryIdCtrl', ['$scope', '$state', '$stateParams', 'OperationsModel', 'ListingsModel', '$ngRedux', 
-      function($scope, $state, $stateParams, OperationsModel, ListingsModel, $ngRedux) {
+    .controller('ListingGetByCategoryIdCtrl', ['$scope', '$state', '$stateParams', 'OperationsModel', 'ListingsModel', '$ngRedux', 'NgTableParams', 
+      function($scope, $state, $stateParams, OperationsModel, ListingsModel, $ngRedux, NgTableParams) {
 
         var listingGetByCategoryIdCtrl = this;
 
@@ -46,6 +46,7 @@ angular.module('resources.operations.listinggetbycategoryid', [])
               .success(function (listings) {
                   if (listings) {
                       listingGetByCategoryIdCtrl.listings = listings;
+                      listingGetByCategoryIdCtrl.listingsTableParams = new NgTableParams({}, { dataset: listings});
                       $ngRedux.dispatch({
                         type: 'SEARCH_LISTING_GETBYCATEGORYID', 
                         payload: {
