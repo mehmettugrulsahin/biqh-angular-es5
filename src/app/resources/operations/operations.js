@@ -87,12 +87,12 @@ angular.module('resources.operations', [
 
           function OperationSheetController() {
             this.items = [
-              { name: 'E-Mail', icon: 'email', icon_url: '/src/assets/svg/email.svg'}, 
-              { name: 'Skype', icon: 'skype', icon_url: '/src/assets/svg/skype.svg'}, 
-              { name: 'GitHub', icon: 'github', icon_url: '/src/assets/svg/github.svg'}, 
-              { name: 'Bitbucket', icon: 'bitbucket', icon_url: '/src/assets/svg/bitbucket.svg'}, 
-              { name: 'Free Code Camp', icon: 'freecodecamp', icon_url: '/src/assets/svg/freecodecamp.svg'}, 
-              { name: 'CodePen', icon: 'codepen', icon_url: '/src/assets/svg/codepen.svg'}
+              { name: 'E-Mail', icon: 'email', icon_url: '/src/assets/svg/email.svg', url: ''}, 
+              { name: 'Skype', icon: 'skype', icon_url: '/src/assets/svg/skype.svg', url: ''}, 
+              { name: 'GitHub', icon: 'github', icon_url: '/src/assets/svg/github.svg', url: 'https://github.com/mehmettugrulsahin'}, 
+              { name: 'Bitbucket', icon: 'bitbucket', icon_url: '/src/assets/svg/bitbucket.svg', url: 'https://github.com/mehmettugrulsahin'}, 
+              { name: 'Free Code Camp', icon: 'freecodecamp', icon_url: '/src/assets/svg/freecodecamp.svg', url: 'https://www.freecodecamp.com/mehmettugrulsahin'}, 
+              { name: 'CodePen', icon: 'codepen', icon_url: '/src/assets/svg/codepen.svg', url: 'http://codepen.io/mehmettugrulsahin/'}
             ];
             this.performAction = function(action) {
               $mdBottomSheet.hide();

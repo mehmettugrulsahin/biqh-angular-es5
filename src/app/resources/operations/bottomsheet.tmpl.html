@@ -7,9 +7,9 @@
     <div layout="row" flex>
 	<md-list>
 		<md-input-container ng-repeat='item in vm.items'>
-			<md-button ng-click='vm.performAction()'>
+			<md-button ng-click='vm.performAction()' href="{{item.url}}" target="_blank">
 				<md-icon md-svg-icon='{{item.icon_url}}'></md-icon>
-				{{item.name}}			
+				{{item.name}}
 			</md-button>
 		</md-input-container>
 	</md-list>

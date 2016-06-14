@@ -33,13 +33,16 @@
         <script src="src/app/common/models/listings-model.js"></script>
         <script src="src/app/common/models/mutualfund-model.js"></script>
     </head>
-    <body layout="column">
-        <md-toolbar>
-          <h1>AngularJS quickstart project for MarketData API</h1>
+    <body layout="column" ng-cloak>
+        <md-toolbar layout='row' ng-controller="MainCtrl as mainCtrl">
+            <md-button aria-label="Show Menu" md-svg-icon="menu" ng-click="mainCtrl.toggleList()" hide-gt-sm>
+                <md-icon md-svg-icon='/src/assets/svg/menu.svg'></md-icon>            
+            </md-button>
+            <h1>AngularJS quickstart project for MarketData API</h1>
         </md-toolbar>
 
         <div class="container" layout="row">
-          <md-sidenav md-is-locked-open="true" class="md-whiteframe-4dp">
+          <md-sidenav md-is-locked-open="$mdMedia('gt-sm')" class="md-whiteframe-4dp" md-component-id="left">
             <div ui-view="resources"></div>
           </md-sidenav>
 

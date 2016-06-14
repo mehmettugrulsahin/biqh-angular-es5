@@ -1,6 +1,6 @@
-<md-list>
+<md-list ng-controller="MainCtrl as mainCtrl">
   <md-list-item ng-repeat="resource in resourcesListCtrl.resources" ng-class="{'active':isCurrentResource(resource)}">
-    <md-button ui-sref="marketdata.resources.operations({resource:resource.name})">
+    <md-button ng-click="mainCtrl.toggleList()" ui-sref="marketdata.resources.operations({resource:resource.name})">
       <md-icon md-svg-src={{resource.icon}}></md-icon> {{resource.name}}
     </md-button>
   </md-list-item>

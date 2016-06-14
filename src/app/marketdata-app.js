@@ -6,10 +6,27 @@ angular.module('MarketData', [
     'resources',
     'resources.operations'
 ])
-    .config(routerConfig)
-    .config(reduxConfig);
+  .config(routerConfig)
+  .config(reduxConfig)
+  .controller('MainCtrl', ['$mdSidenav', function($mdSidenav) {
+      var mainCtrl = this;
+
+      function toggleList() {
+        $mdSidenav('left').toggle();
+      }
+
+      mainCtrl.toggleList = toggleList;
+  }])
+  .config(themingConfig)
+;
 
 reduxConfig.$inject = ['$ngReduxProvider'];
+
+function themingConfig($mdThemingProvider) {
+  $mdThemingProvider.theme('default')
+    .primaryPalette('blue-grey')
+    .accentPalette('amber');
+}
 
 function routerConfig($stateProvider, $urlRouterProvider) {
     $stateProvider
