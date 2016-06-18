@@ -1,6 +1,6 @@
 <p align="center">
   <a href="http://mehmettugrulsahin.github.io/" target="_blank">
-    <img src="https://www.googledrive.com/host/0B98Jh1ZWJ1lfSmllcWJBamtselU" alt="MarketData and AngularJS" width="500"/>
+    <img src="https://www.googledrive.com/host/0B98Jh1ZWJ1lfT1ZtZ1dLT3pMcmM" alt="MarketData and AngularJS" width="500"/>
   </a>
 </p>
 
