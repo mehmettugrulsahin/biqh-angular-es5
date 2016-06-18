@@ -4,8 +4,8 @@
   </a>
 </p>
 
-# MarketData with Angular 2
-This is a simple marketdata client built with AngularJS and EcmaScript5
+# An Angular 1.x MarketData client with Redux
+This is a simple MarketData client built with AngularJS and EcmaScript5
 
 This repo demonstrates many foundational concepts of AngularJS, such as component construction, routing and much more!
 
