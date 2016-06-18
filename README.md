@@ -1,27 +1,21 @@
-#marketdata-angular-es5
+<p align="center">
+  <a href="http://mehmettugrulsahin.github.io/" target="_blank">
+    <img src="https://www.googledrive.com/host/0B98Jh1ZWJ1lfSmllcWJBamtselU" alt="MarketData and AngularJS" width="500"/>
+  </a>
+</p>
 
-## Getting Started
+# MarketData with Angular 2
+This is a simple marketdata client built with AngularJS and EcmaScript5
 
-All you need to do is to clone this repository,
+This repo demonstrates many foundational concepts of AngularJS, such as component construction, routing and much more!
 
-```
-git clone https://github.com/mehmettugrulsahin/marketdata-angular-es5
+## Getting started
+```bash
+git clone https://github.com/mehmettugrulsahin/marketdata-angular-es5.git
 cd marketdata-angular-es5
-```
-
-Then, install all the dependencies:
-
-```
-npm install
-```
-
-Then, run the Application:
-
-```
+npm i # installs NPM packages
 npm start
 ```
-
-Then, navigate to:
-```
-http://localhost:8080
-```
+Navigate to <a href="http://localhost:8070" target="_blank">http://localhost:8070</a> in your browser.
+> For a complete list of commands, view the `scripts` attribute in the
+<a href="https://github.com/mehmettugrulsahin/marketdata-angular-es5/blob/master/package.json" target="_blank">`package.json`</a> file.

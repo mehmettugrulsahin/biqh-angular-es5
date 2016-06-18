@@ -1,13 +1,12 @@
 {
   "name": "marketdata-angular-es5",
-  "private": true,
+  "homepage": "https://github.com/mehmettugrulsahin/marketdata-angular-es5",
   "version": "0.0.0",
-  "description": "AngularJS quickstart project for MarketData API",
-  "repository": "https://github.com/mehmettugrulsahin/marketdata-angular-es5",
-  "license": "MIT",
-  "scripts": {
-    "prestart": "npm install",
-    "start": "http-server -a localhost -p 8080 -c-1"
+  "description": "An AngularJS version of MarketData",
+  "main": "",
+  "dependencies": {
+    "ng-redux": "^3.3.4-beta.0",
+    "redux": "^3.5.2"
   },
   "devDependencies": {
     "angular": "^1.5.6",
@@ -19,8 +18,23 @@
     "lodash": "^4.13.1",
     "ng-table": "^0.8.3"
   },
-  "dependencies": {
-    "ng-redux": "^3.3.4-beta.0",
-    "redux": "^3.5.2"
-  }
+  "scripts": {
+    "prestart": "npm install",
+    "start": "http-server -a localhost -p 8070 -c-1"
+  },
+  "keywords": [
+    "angular",
+    "redux",
+    "ng-redux"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mehmettugrulsahin/marketdata-angular-es5.git"
+  },
+  "author": {
+    "name": "Mehmet Tuğrul Şahin",
+    "url": "http://mehmettugrulsahin.github.io/",
+    "email": "mehmettugrulsahin@gmail.com"
+  },
+  "license": "MIT"
 }
